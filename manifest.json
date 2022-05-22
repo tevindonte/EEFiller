@@ -1,0 +1,24 @@
+{
+    "manifest_version" : 3,
+    "name" : "EEFiller",
+    "description" : "Eric Emmanuel Auto Filler",
+    "version" : "1.0",
+    "background" : {
+        "service_worker" : "welcome/background.js"
+    },
+    "action" : {
+        "default_popup" : "ext/indext.html"
+    },
+    "content_scrpts" : [{
+        "matches" : ["<all_urls>"],
+        "js" : ["content.js"]
+        
+    }],
+    "permissions" : [
+        "activeTab",
+        "declarativeContent",
+        "storage"
+        
+    ]
+
+}
