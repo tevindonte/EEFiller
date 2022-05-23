@@ -11,8 +11,8 @@ chrome.runtime.onMessage.addListener(
             document.getElementById("checkout_shipping_address_province").value = request.state,
             document.getElementById("checkout_shipping_address_zip").value = request.zipcode,
             document.getElementById("checkout_shipping_address_phone").value = request.phone,
-            //document.getElementById("continue_button").click();
-            //document.getElementById("continue_button").click();
+            document.getElementById("continue_button").click();
+            document.getElementById("continue_button").click();
             document.getElementById("number").value = request.card,
             document.getElementById("name").value = request.namecard,
             document.getElementById("expiry").value = request.expire,

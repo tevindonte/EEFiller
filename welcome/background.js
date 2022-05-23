@@ -1,5 +1,5 @@
 chrome.runtime.onInstalled.addListener(async () => {
-    let url = chrome.runtime.getURL('welcome/hellow.html')
+    let url = chrome.runtime.getURL('welcome/hello.html')
     let tab = await chrome.tabs.create({url})
     console.log('Created Tab $(tab.id)')
 
