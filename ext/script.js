@@ -15,13 +15,15 @@ document.getElementById("autofill").addEventListenes("click", () => {
             namecard: document.getElementById('name').value,
             expire: document.getElementById('expire').value,
             seccode: document.getElementById('seccode').value
-        }), function(response) {
+        }, function(response) {
             console.log(response.status)
-        }
-    })
-})
+            //document.getElementById("continue_button").click();
+            //document.getElementById("continue_button").click();
+        });
+    });
+});
 
-document.getComputedStyleElementById('save').addEventListener('click', () => {
+document.getElementById("save").addEventListener("click", () => {
     chrome.storage.sync.set ({
         firstname: document.getElementById('firstname').value, 
         lastname: document.getElementById('lastname').value, 
@@ -39,11 +41,11 @@ document.getComputedStyleElementById('save').addEventListener('click', () => {
         seccode: document.getElementById('seccode').value        
     }, function () {
         console.log('Saved!')
-    })
+    });
 
-})
+});
 
-document.getElementById('load').addEventListener('click', () => () => {
+document.getElementById("load").addEventListener("click", () => {
     chrome.storage.sync.get([
         'firstname',
         'lastname',
@@ -60,21 +62,21 @@ document.getElementById('load').addEventListener('click', () => () => {
         'expire',
         'seccode'
 
-    ], function(results) {
-        document.getElementById('firstname').value = result.firstname
-        document.getElementById('lastname').value = result.lastname
-        document.getElementById('email').value = result.email
-        document.getElementById('address').value = result.address
-        document.getElementById('apartment').value = result.apartment
-        document.getElementById('city').value = result.city
-        document.getElementById('country').value = result.country
-        document.getElementById('state').value = result.state
-        document.getElementById('zipcode').value = result.zipcode
-        document.getElementById('phone').value = result.phone
-        document.getElementById('card').value = result.card
-        document.getElementById('namecard').value = result.namecard
-        document.getElementById('expire').value = result.expire
-        document.getElementById('seccode').value = result.seccode
+    ], function(result) {
+        document.getElementById('firstname').value = result.firstname;
+        document.getElementById('lastname').value = result.lastname;
+        document.getElementById('email').value = result.email;
+        document.getElementById('address').value = result.address;
+        document.getElementById('apartment').value = result.apartment;
+        document.getElementById('city').value = result.city;
+        document.getElementById('country').value = result.country;
+        document.getElementById('state').value = result.state;
+        document.getElementById('zipcode').value = result.zipcode;
+        document.getElementById('phone').value = result.phone;
+        document.getElementById('card').value = result.card;
+        document.getElementById('namecard').value = result.namecard;
+        document.getElementById('expire').value = result.expire;
+        document.getElementById('seccode').value = result.seccode;
 
-    })
-})
+    });
+});
